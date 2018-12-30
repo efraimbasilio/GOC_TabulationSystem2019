@@ -36,6 +36,8 @@ Partial Class frmServer
         Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cmbAllEvent = New System.Windows.Forms.ComboBox()
+        Me.lblEventNumber = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lvAllEvents
@@ -115,11 +117,34 @@ Partial Class frmServer
         Me.cmbAllEvent.Size = New System.Drawing.Size(121, 21)
         Me.cmbAllEvent.TabIndex = 41
         '
+        'lblEventNumber
+        '
+        Me.lblEventNumber.AutoSize = True
+        Me.lblEventNumber.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblEventNumber.Location = New System.Drawing.Point(752, 15)
+        Me.lblEventNumber.Name = "lblEventNumber"
+        Me.lblEventNumber.Size = New System.Drawing.Size(87, 13)
+        Me.lblEventNumber.TabIndex = 43
+        Me.lblEventNumber.Text = "theEventNumber"
+        Me.lblEventNumber.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.Label3.Location = New System.Drawing.Point(671, 15)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(75, 13)
+        Me.Label3.TabIndex = 44
+        Me.Label3.Text = "Current Event:"
+        '
         'frmServer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1350, 729)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.lblEventNumber)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.cmbAllEvent)
         Me.Controls.Add(Me.lvAllEvents)
@@ -146,4 +171,6 @@ Partial Class frmServer
     Friend WithEvents ColumnHeader11 As ColumnHeader
     Friend WithEvents Label2 As Label
     Friend WithEvents cmbAllEvent As ComboBox
+    Friend WithEvents lblEventNumber As Label
+    Friend WithEvents Label3 As Label
 End Class
