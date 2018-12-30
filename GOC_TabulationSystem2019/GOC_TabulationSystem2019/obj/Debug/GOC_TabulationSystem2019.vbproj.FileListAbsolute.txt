@@ -1,1 +1,2 @@
 E:\GOC_TabulationSystem2019\GOC_TabulationSystem2019\bin\Debug\GOC_TabulationSystem2019.exe.config
+C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\bin\Debug\GOC_TabulationSystem2019.exe.config
