@@ -284,4 +284,67 @@ Module Functions
         End Try
         Return 0
     End Function
+
+    Public Sub EventMinimumAndMaximumScore(ByVal frm As Control)
+        Try
+            Dim sql As String
+            sql = "SELECT * FROM tbl_event_details WHERE event = " & EventNumberValue & ""
+            dbConnect()
+            With cmd
+                .Connection = cn
+                .CommandText = sql
+                dr = .ExecuteReader
+            End With
+
+            If dr.HasRows Then
+                While dr.Read()
+                    EventMaxScore = dr("maxScore")
+                    EventMinScore = dr("minScore")
+
+                End While
+            End If
+
+            dbClose()
+        Catch ex As Exception
+            MsgBox("Error" & ex.Message, vbCritical, "Message")
+        End Try
+    End Sub
+
+
+    Public Sub ValidateComboMaxMinParam(ByRef frm As Control, ByVal eventMaximum As Double, ByVal eventMinimum As Double)
+
+        For Each cmb In frm.Controls.OfType(Of ComboBox)()
+            If cmb.Text = "" Then
+                cmb.Text = 0
+            End If
+
+            If cmb.Text.Contains("..") = True Then
+                cmb.Text = String.Format("{0:0.00}", Val(cmb.Text))
+
+            Else
+                cmb.Text = String.Format("{0:0.00}", Val(cmb.Text))
+            End If
+
+            If cmb.Text >= eventMinimum And cmb.Text <= eventMaximum Then
+                cmb.Text = String.Format("{0:0.00}", Val(cmb.Text))
+            Else
+                Dim a As String = "0.00"
+                cmb.Text = String.Format("{0:0.00}", Val(a))
+            End If
+        Next
+    End Sub
+
+    Public Sub variable1()
+        variableTable = "tbl_max_min_first"
+        variableField = "first"
+
+    End Sub
+
+    Public Sub variableSecond()
+        variableTable = "tbl_max_min_second"
+        variableField = "second"
+
+    End Sub
+
+
 End Module

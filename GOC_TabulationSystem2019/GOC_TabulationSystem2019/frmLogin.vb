@@ -86,6 +86,37 @@
         Return 0
     End Function
 
+    Public Sub VariableTableScoreLoadCombo(ByVal frm As Control, tbl As String)
+        Try
+            Dim sql As String
+            variableQuery = String.Concat("SELECT * FROM  " & variableTable & " ORDER BY " & tbl & " DESC")
+            sql = variableQuery
+            dbConnect()
+            With cmd
+                .Connection = cn
+                .CommandText = sql
+                dr = .ExecuteReader
+            End With
+
+            'Clear all the combo
+            ClearAllCombo(frm)
+
+            If dr.HasRows Then
+                While dr.Read()
+
+                    'load all Combobox in a form
+                    For Each cmb In frm.Controls.OfType(Of ComboBox)()
+                        cmb.Items.Add(dr(String.Concat("" & variableField & "")))
+                    Next
+                End While
+            End If
+
+            dbClose()
+        Catch ex As Exception
+            MsgBox("Error" & ex.Message, vbCritical, "Message")
+        End Try
+    End Sub
+
     Function PassJudgeto()
         Try
             Dim sql As String
@@ -101,6 +132,17 @@
             If dr.HasRows Then
                 While dr.Read()
                     frmAllEvents.lblJudgeNo.Text = dr("loadJudges")
+                    For x = 1 To 9
+                        If dr("loadJudges") = String.Concat("J" & x & "") Then
+
+                            variableTable = String.Concat("tbl_max_min_" & x & "")
+                            variableField = x
+
+                            VariableTableScoreLoadCombo(frmAllEvents, variableField)
+                            Exit Function
+                        End If
+                    Next
+
                 End While
             End If
 
@@ -121,6 +163,8 @@
         CheckEvent()
         LoadTheEvent()
         PassJudgeto()
+
+
         frmAllEvents.Show()
     End Sub
 
