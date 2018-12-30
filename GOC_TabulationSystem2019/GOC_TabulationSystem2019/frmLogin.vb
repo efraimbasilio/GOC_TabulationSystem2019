@@ -117,7 +117,7 @@
         End Try
     End Sub
 
-    Function PassJudgeto()
+    Public Sub PassJudgeto()
         Try
             Dim sql As String
             sql = "SELECT * FROM tbl_load_number_of_judges WHERE loadJudges ='" + cboJudge.SelectedItem + "'"
@@ -127,32 +127,28 @@
                 .CommandText = sql
                 dr = .ExecuteReader
             End With
-
-            frmServer.cmbEvent.Items.Clear()
+            cboJudge.Items.Clear()
+            'frmServer.cmbEvent.Items.Clear()
             If dr.HasRows Then
                 While dr.Read()
                     frmAllEvents.lblJudgeNo.Text = dr("loadJudges")
-                    For x = 1 To 9
+                    For x = 1 To Judges
                         If dr("loadJudges") = String.Concat("J" & x & "") Then
 
                             variableTable = String.Concat("tbl_max_min_" & x & "")
                             variableField = x
 
                             VariableTableScoreLoadCombo(frmAllEvents, variableField)
-                            Exit Function
+                            Exit Sub
                         End If
                     Next
-
                 End While
             End If
-
             dbClose()
         Catch ex As Exception
             MsgBox("Error" & ex.Message, vbCritical, "Message")
         End Try
-        'Return 0
-        Return 0
-    End Function
+    End Sub
 
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
