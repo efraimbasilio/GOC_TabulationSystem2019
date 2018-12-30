@@ -13,3 +13,4 @@ C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem201
 C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\obj\Debug\GOC_TabulationSystem2019.exe
 C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\obj\Debug\GOC_TabulationSystem2019.xml
 C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\obj\Debug\GOC_TabulationSystem2019.pdb
+C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\obj\Debug\GOC_TabulationSystem2019.frmLogin.resources

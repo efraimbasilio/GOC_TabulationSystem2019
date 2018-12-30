@@ -30,6 +30,7 @@ Module Functions
     Public variableEvent, theVariableField As String
 
     Public DefaultScoreDataGrid As Double
+    Public EventChecker As String
 
     'load eventname to server
     Function CallAllEvents()
@@ -77,6 +78,7 @@ Module Functions
 
                     'to view in Server Side
                     frmServer.lblEventNumber.Text = EventNumberValue
+
                 End While
             End If
 
