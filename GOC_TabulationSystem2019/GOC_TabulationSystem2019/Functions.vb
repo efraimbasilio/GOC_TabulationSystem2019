@@ -31,6 +31,7 @@ Module Functions
 
     Public DefaultScoreDataGrid As Double
 
+    'load eventname to server
     Function CallAllEvents()
         Try
             Dim sql As String
@@ -56,7 +57,7 @@ Module Functions
         Return 0
     End Function
 
-
+    'set eventnumber variable for all event client scoring
     Public Sub EventNumber(ByVal frm As Control)
         Try
             Dim sql As String
@@ -85,6 +86,7 @@ Module Functions
         End Try
     End Sub
 
+    'load event number to server
     Function CallNumberEvents()
         Try
             Dim sql As String
@@ -152,6 +154,7 @@ Module Functions
     End Function
 
     'Compute events depends in the selection -// 90 percent Generic for 9 judges
+    'Add total computed scores to elimination table
     Function ComputeEvent(ByVal AllList As ListView, variableTableEvent As String, variableFieldEvent As String)
         With AllList
             For x = 0 To .Items.Count - 1
@@ -246,7 +249,7 @@ Module Functions
         Return 0
     End Function
 
-
+    'Load eliminationscores to server for viewing
     Function CallEliminationScores(ByVal lvElim As ListView)
         Try
             Dim sql As String
