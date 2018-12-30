@@ -34,4 +34,26 @@
             CallEliminationScores(lvElimination)
         End If
     End Sub
+
+    Private Sub cmbEvent_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEvent.SelectedIndexChanged
+        Try
+            Dim sql As String
+            sql = "UPDATE tbl_events_status SET eventNumber = '" & cmbEvent.Text & "'"
+            dbConnect()
+
+            With cmd
+                .Connection = cn
+                .CommandText = sql
+                .ExecuteNonQuery()
+            End With
+
+            dbClose()
+            MsgBox("Form activated updated", vbInformation, "Message")
+
+        Catch ex As Exception
+            MsgBox("Error" & ex.Message.ToString, vbCritical, "Message")
+        End Try
+
+        EventNumber(Me)
+    End Sub
 End Class

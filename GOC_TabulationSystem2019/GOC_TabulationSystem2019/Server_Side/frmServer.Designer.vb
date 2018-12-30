@@ -127,10 +127,11 @@ Partial Class frmServer
         'lblEventNumber
         '
         Me.lblEventNumber.AutoSize = True
+        Me.lblEventNumber.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEventNumber.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblEventNumber.Location = New System.Drawing.Point(765, 40)
+        Me.lblEventNumber.Location = New System.Drawing.Point(803, 40)
         Me.lblEventNumber.Name = "lblEventNumber"
-        Me.lblEventNumber.Size = New System.Drawing.Size(87, 13)
+        Me.lblEventNumber.Size = New System.Drawing.Size(132, 18)
         Me.lblEventNumber.TabIndex = 43
         Me.lblEventNumber.Text = "theEventNumber"
         Me.lblEventNumber.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -138,20 +139,22 @@ Partial Class frmServer
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.WindowText
         Me.Label3.Location = New System.Drawing.Point(681, 40)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(75, 13)
+        Me.Label3.Size = New System.Drawing.Size(116, 18)
         Me.Label3.TabIndex = 44
         Me.Label3.Text = "Current Event:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label1.Location = New System.Drawing.Point(681, 68)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Maroon
+        Me.Label1.Location = New System.Drawing.Point(692, 72)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(96, 13)
+        Me.Label1.Size = New System.Drawing.Size(148, 18)
         Me.Label1.TabIndex = 46
         Me.Label1.Text = "SET Current Event"
         '
@@ -159,10 +162,11 @@ Partial Class frmServer
         '
         Me.cmbEvent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbEvent.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cmbEvent.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbEvent.FormattingEnabled = True
-        Me.cmbEvent.Location = New System.Drawing.Point(783, 65)
+        Me.cmbEvent.Location = New System.Drawing.Point(741, 95)
         Me.cmbEvent.Name = "cmbEvent"
-        Me.cmbEvent.Size = New System.Drawing.Size(79, 21)
+        Me.cmbEvent.Size = New System.Drawing.Size(56, 26)
         Me.cmbEvent.TabIndex = 45
         '
         'lvElimination
