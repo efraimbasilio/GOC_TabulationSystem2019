@@ -184,25 +184,25 @@ Module Functions
         Next
 
 
-        'For x = 0 To AllList.Items.Count - 1
-        '    Try
-        '        Dim sql As String
-        '        sql = String.Concat("UPDATE  tbl_elimination SET " & variableFieldEvent & " = '" & AllList.Items(x).SubItems(10).Text & "' WHERE can_no = '" & AllList.Items(x).Text & "'")
+        For x = 0 To AllList.Items.Count - 1
+            Try
+                Dim sql As String
+                sql = String.Concat("UPDATE  tbl_elimination SET " & variableFieldEvent & " = '" & AllList.Items(x).SubItems(10).Text & "' WHERE can_no = '" & AllList.Items(x).Text & "'")
 
-        '        dbConnect()
+                dbConnect()
 
-        '        With cmd
-        '            .Connection = cn
-        '            .CommandText = sql
-        '            .ExecuteNonQuery()
-        '        End With
+                With cmd
+                    .Connection = cn
+                    .CommandText = sql
+                    .ExecuteNonQuery()
+                End With
 
-        '        dbClose()
+                dbClose()
 
-        '    Catch ex As Exception
-        '        MsgBox("Error: " & ex.Message.ToString, vbCritical + vbOKOnly, "Message")
-        '    End Try
-        'Next
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message.ToString, vbCritical + vbOKOnly, "Message")
+            End Try
+        Next
         Return 0
     End Function
 
