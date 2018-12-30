@@ -273,12 +273,14 @@ Partial Class frmAllEvents
         '
         Me.lblEventName.AutoSize = True
         Me.lblEventName.BackColor = System.Drawing.Color.Transparent
+        Me.lblEventName.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblEventName.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEventName.Location = New System.Drawing.Point(255, 24)
+        Me.lblEventName.Location = New System.Drawing.Point(616, 9)
         Me.lblEventName.Name = "lblEventName"
         Me.lblEventName.Size = New System.Drawing.Size(212, 24)
         Me.lblEventName.TabIndex = 361
         Me.lblEventName.Text = "PRODUCTION ATTIRE"
+        Me.lblEventName.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Label12
         '

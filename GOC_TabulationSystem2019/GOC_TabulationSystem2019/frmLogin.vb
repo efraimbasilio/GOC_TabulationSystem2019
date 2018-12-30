@@ -75,6 +75,7 @@
                 While dr.Read()
                     frmAllEvents.lblEventName.Text = dr("eventName")
                     frmAllEvents.lblEventName.Font = New Font(FontFamily.GenericSansSerif, 24.0F, FontStyle.Bold)
+                    frmAllEvents.lblEventName.Location = New Point(550, 10)
                 End While
             End If
 
