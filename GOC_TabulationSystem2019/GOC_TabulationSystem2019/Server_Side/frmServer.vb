@@ -17,20 +17,21 @@
             'Load Score in the Listview scores depends in the selection
             LoadList(lvAllEvents, variableEvent)
 
-            'ComputeEvent(lvAllEvents, variableEvent, theVariableField)
-            'SortEvent(lvAllEvents, variableEvent)
+            ComputeEvent(lvAllEvents, variableEvent, theVariableField)
+            SortEvent(lvAllEvents, variableEvent)
 
-            'CallEliminationScores(lvElimination)
+            CallEliminationScores(lvElimination)
 
         ElseIf cmbAllEvent.SelectedItem = "Evening Gown Competition" Then
             variableEvent = "tbl_second_event"
             theVariableField = "Second"
 
-            'LoadList(lvAllEvents, variableEvent)
-            'ComputeEvent(lvAllEvents, variableEvent, theVariableField)
-            'SortEvent(lvAllEvents, variableEvent)
+            'Load Score in the Listview scores depends in the selection
+            LoadList(lvAllEvents, variableEvent)
+            ComputeEvent(lvAllEvents, variableEvent, theVariableField)
+            SortEvent(lvAllEvents, variableEvent)
 
-            'CallEliminationScores(lvElimination)
+            CallEliminationScores(lvElimination)
         End If
     End Sub
 End Class

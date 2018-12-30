@@ -40,6 +40,11 @@ Partial Class frmServer
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbEvent = New System.Windows.Forms.ComboBox()
+        Me.lvElimination = New System.Windows.Forms.ListView()
+        Me.canNo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Total = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Event1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Event2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'lvAllEvents
@@ -47,7 +52,7 @@ Partial Class frmServer
         Me.lvAllEvents.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11})
         Me.lvAllEvents.FullRowSelect = True
         Me.lvAllEvents.GridLines = True
-        Me.lvAllEvents.Location = New System.Drawing.Point(674, 39)
+        Me.lvAllEvents.Location = New System.Drawing.Point(11, 40)
         Me.lvAllEvents.Name = "lvAllEvents"
         Me.lvAllEvents.Size = New System.Drawing.Size(664, 301)
         Me.lvAllEvents.TabIndex = 2
@@ -103,18 +108,18 @@ Partial Class frmServer
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label2.Location = New System.Drawing.Point(1143, 15)
+        Me.Label2.Location = New System.Drawing.Point(379, 16)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(68, 13)
+        Me.Label2.Size = New System.Drawing.Size(169, 13)
         Me.Label2.TabIndex = 42
-        Me.Label2.Text = "Select Event"
+        Me.Label2.Text = "View Computed Event Scores for :"
         '
         'cmbAllEvent
         '
         Me.cmbAllEvent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbAllEvent.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cmbAllEvent.FormattingEnabled = True
-        Me.cmbAllEvent.Location = New System.Drawing.Point(1217, 12)
+        Me.cmbAllEvent.Location = New System.Drawing.Point(554, 13)
         Me.cmbAllEvent.Name = "cmbAllEvent"
         Me.cmbAllEvent.Size = New System.Drawing.Size(121, 21)
         Me.cmbAllEvent.TabIndex = 41
@@ -123,7 +128,7 @@ Partial Class frmServer
         '
         Me.lblEventNumber.AutoSize = True
         Me.lblEventNumber.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblEventNumber.Location = New System.Drawing.Point(752, 15)
+        Me.lblEventNumber.Location = New System.Drawing.Point(765, 40)
         Me.lblEventNumber.Name = "lblEventNumber"
         Me.lblEventNumber.Size = New System.Drawing.Size(87, 13)
         Me.lblEventNumber.TabIndex = 43
@@ -134,7 +139,7 @@ Partial Class frmServer
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label3.Location = New System.Drawing.Point(671, 15)
+        Me.Label3.Location = New System.Drawing.Point(681, 40)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(75, 13)
         Me.Label3.TabIndex = 44
@@ -144,27 +149,60 @@ Partial Class frmServer
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label1.Location = New System.Drawing.Point(975, 15)
+        Me.Label1.Location = New System.Drawing.Point(681, 68)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(72, 13)
+        Me.Label1.Size = New System.Drawing.Size(96, 13)
         Me.Label1.TabIndex = 46
-        Me.Label1.Text = "Current Event"
+        Me.Label1.Text = "SET Current Event"
         '
         'cmbEvent
         '
         Me.cmbEvent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbEvent.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cmbEvent.FormattingEnabled = True
-        Me.cmbEvent.Location = New System.Drawing.Point(1053, 12)
+        Me.cmbEvent.Location = New System.Drawing.Point(783, 65)
         Me.cmbEvent.Name = "cmbEvent"
         Me.cmbEvent.Size = New System.Drawing.Size(79, 21)
         Me.cmbEvent.TabIndex = 45
+        '
+        'lvElimination
+        '
+        Me.lvElimination.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.canNo, Me.Total, Me.Event1, Me.Event2})
+        Me.lvElimination.FullRowSelect = True
+        Me.lvElimination.GridLines = True
+        Me.lvElimination.Location = New System.Drawing.Point(868, 31)
+        Me.lvElimination.Name = "lvElimination"
+        Me.lvElimination.Size = New System.Drawing.Size(326, 310)
+        Me.lvElimination.TabIndex = 47
+        Me.lvElimination.UseCompatibleStateImageBehavior = False
+        Me.lvElimination.View = System.Windows.Forms.View.Details
+        '
+        'canNo
+        '
+        Me.canNo.Text = "Candidate No."
+        Me.canNo.Width = 80
+        '
+        'Total
+        '
+        Me.Total.Text = "Total"
+        Me.Total.Width = 80
+        '
+        'Event1
+        '
+        Me.Event1.Text = "Event _1"
+        Me.Event1.Width = 80
+        '
+        'Event2
+        '
+        Me.Event2.Text = "Event_2"
+        Me.Event2.Width = 80
         '
         'frmServer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1350, 729)
+        Me.Controls.Add(Me.lvElimination)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cmbEvent)
         Me.Controls.Add(Me.Label3)
@@ -199,4 +237,9 @@ Partial Class frmServer
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents cmbEvent As ComboBox
+    Friend WithEvents lvElimination As ListView
+    Friend WithEvents canNo As ColumnHeader
+    Friend WithEvents Total As ColumnHeader
+    Friend WithEvents Event1 As ColumnHeader
+    Friend WithEvents Event2 As ColumnHeader
 End Class
