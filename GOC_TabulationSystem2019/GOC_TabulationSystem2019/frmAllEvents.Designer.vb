@@ -60,7 +60,7 @@ Partial Class frmAllEvents
         Me.cmbScore3 = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbScore2 = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnSubmitScore = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblJudgeNo = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -471,20 +471,21 @@ Partial Class frmAllEvents
         Me.cmbScore2.Size = New System.Drawing.Size(121, 41)
         Me.cmbScore2.TabIndex = 330
         '
-        'Button1
+        'btnSubmitScore
         '
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Location = New System.Drawing.Point(492, 623)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(431, 55)
-        Me.Button1.TabIndex = 360
-        Me.Button1.Text = "Submit Score"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnSubmitScore.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSubmitScore.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnSubmitScore.Location = New System.Drawing.Point(492, 623)
+        Me.btnSubmitScore.Name = "btnSubmitScore"
+        Me.btnSubmitScore.Size = New System.Drawing.Size(431, 55)
+        Me.btnSubmitScore.TabIndex = 360
+        Me.btnSubmitScore.Text = "Submit Score"
+        Me.btnSubmitScore.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PictureBox1.Image = Global.GOC_TabulationSystem2019.My.Resources.Resources._15
         Me.PictureBox1.Location = New System.Drawing.Point(509, 65)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(404, 552)
@@ -567,7 +568,7 @@ Partial Class frmAllEvents
         Me.Controls.Add(Me.cmbScore3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cmbScore2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnSubmitScore)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblJudgeNo)
         Me.Controls.Add(Me.Label2)
@@ -619,7 +620,7 @@ Partial Class frmAllEvents
     Friend WithEvents cmbScore3 As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents cmbScore2 As ComboBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnSubmitScore As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents lblJudgeNo As Label
     Friend WithEvents Label2 As Label

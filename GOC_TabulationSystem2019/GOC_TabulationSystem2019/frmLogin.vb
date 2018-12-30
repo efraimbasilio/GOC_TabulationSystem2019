@@ -86,12 +86,15 @@
         Return 0
     End Function
 
-    Public Sub VariableTableScoreLoadCombo(ByVal frm As Control, tbl As String)
+    Public Sub VariableTableScoreLoadCombo(ByVal frm As Control, tbl As String, fieldName As String)
         Try
             Dim sql As String
-            variableQuery = String.Concat("SELECT * FROM  " & variableTable & " ORDER BY " & tbl & " DESC")
-            sql = variableQuery
             dbConnect()
+
+            'variableQuery = String.Concat("SELECT * FROM  " & tbl & " ORDER BY " & fieldName & " DESC")
+            variableQuery = String.Concat("SELECT * FROM  " & tbl & " ORDER BY 1 DESC")
+            sql = variableQuery
+            'MessageBox.Show(variableQuery)
             With cmd
                 .Connection = cn
                 .CommandText = sql
@@ -100,13 +103,13 @@
 
             'Clear all the combo
             ClearAllCombo(frm)
-
+            'MessageBox.Show(variableQuery)
             If dr.HasRows Then
                 While dr.Read()
 
                     'load all Combobox in a form
                     For Each cmb In frm.Controls.OfType(Of ComboBox)()
-                        cmb.Items.Add(dr(String.Concat("" & variableField & "")))
+                        cmb.Items.Add(dr(String.Concat("" & fieldName & "")))
                     Next
                 End While
             End If
@@ -127,7 +130,8 @@
                 .CommandText = sql
                 dr = .ExecuteReader
             End With
-            cboJudge.Items.Clear()
+            'cboJudge.Items.Clear()
+            variableField = 0
             'frmServer.cmbEvent.Items.Clear()
             If dr.HasRows Then
                 While dr.Read()
@@ -138,7 +142,9 @@
                             variableTable = String.Concat("tbl_max_min_" & x & "")
                             variableField = x
 
-                            VariableTableScoreLoadCombo(frmAllEvents, variableField)
+                            ' MessageBox.Show(variableTable + " " + variableField)
+                            VariableTableScoreLoadCombo(frmAllEvents, variableTable, variableField)
+                            dbClose()
                             Exit Sub
                         End If
                     Next

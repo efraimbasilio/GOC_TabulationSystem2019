@@ -32,6 +32,8 @@ Module Functions
     Public DefaultScoreDataGrid As Double
     Public EventChecker As String
 
+    Public ScoreField As Integer
+
     'load eventname to server
     Function CallAllEvents()
         Try
@@ -334,17 +336,85 @@ Module Functions
         Next
     End Sub
 
-    Public Sub variable1()
-        variableTable = "tbl_max_min_first"
-        variableField = "first"
-
+    Public Sub ValidateComboZeroScore(ByVal frm As Control)
+        For Each cmb In frm.Controls.OfType(Of ComboBox)()
+            If Val(cmb.Text) <= 0 Or cmb.Text = "" Then
+                MsgBox("Please score all the candidates", vbCritical, "Message")
+                ExitMe = 1
+                Exit Sub
+                cmb.Focus()
+            End If
+        Next
+        ExitMe = 0
     End Sub
+    Public Sub NumberOfCandidates()
+        Try
+            Dim sql As String
+            sql = "SELECT * FROM tbl_number_of_candidates"
+            dbConnect()
+            With cmd
+                .Connection = cn
+                .CommandText = sql
+                dr = .ExecuteReader
+            End With
 
-    Public Sub variableSecond()
-        variableTable = "tbl_max_min_second"
-        variableField = "second"
+            If dr.HasRows Then
+                While dr.Read()
+                    Candidates = dr("can_no")
+                End While
+            End If
 
+            dbClose()
+        Catch ex As Exception
+            MsgBox("Error" & ex.Message, vbCritical, "Message")
+        End Try
     End Sub
+    Public Sub SubmitScoreVariable(ByVal frm As Control, variableTableToSaved As String)
+        NumberOfCandidates()
 
+        If frm.Controls("lblJno").Text = "j1" Or frm.Controls("lblJno").Text = "j2" Or frm.Controls("lblJno").Text = "j3" Or frm.Controls("lblJno").Text = "j4" Or frm.Controls("lblJno").Text = "j5" Or frm.Controls("lblJno").Text = "j6" Or frm.Controls("lblJno").Text = "j7" Or frm.Controls("lblJno").Text = "j8" Or frm.Controls("lblJno").Text = "j9" Then
+            For x = 1 To Candidates
+                Try
+                    dbConnect()
+                    If x = 1 < Candidates Then
+                        varSqlquery = String.Concat("UPDATE " & variableTableToSaved & " SET " & frm.Controls("lblJno").Text & "  = '" & frm.Controls("cmbscore" & x).Text & "' WHERE can_no = '" & x & "'")
+                        sqlquery = varSqlquery
+                    End If
 
+                    With cmd
+                        .Connection = cn
+                        .CommandText = sqlquery
+                        .ExecuteNonQuery()
+                    End With
+                    dbClose()
+                Catch ex As Exception
+                    MsgBox("Error" & ex.Message.ToString, "Message")
+                End Try
+            Next
+        End If
+    End Sub
+    Public Sub SubmitScoreVariable2(ByVal frm As Control, variableTableToSaved As String)
+        NumberOfCandidates()
+
+        ' If frm.Controls("cbojudge").Text = "j1" Or frm.Controls("lblJno").Text = "j2" Or frm.Controls("lblJno").Text = "j3" Or frm.Controls("lblJno").Text = "j4" Or frm.Controls("lblJno").Text = "j5" Or frm.Controls("lblJno").Text = "j6" Or frm.Controls("lblJno").Text = "j7" Or frm.Controls("lblJno").Text = "j8" Or frm.Controls("lblJno").Text = "j9" Then
+        For x = 1 To Candidates
+                Try
+                    dbConnect()
+                    If x = 1 < Candidates Then
+                    varSqlquery = String.Concat("UPDATE " & variableTableToSaved & " SET " + frmLogin.cboJudge.SelectedItem.ToString + "  = '" & frm.Controls("cmbscore" & x).Text & "' WHERE can_no = '" & x & "'")
+                    sqlquery = varSqlquery
+                    End If
+
+                    With cmd
+                        .Connection = cn
+                        .CommandText = sqlquery
+                        .ExecuteNonQuery()
+                    End With
+                    dbClose()
+                Catch ex As Exception
+                    MsgBox("Error" & ex.Message.ToString, "Message")
+                End Try
+            Next
+        ' End If
+    End Sub
 End Module
