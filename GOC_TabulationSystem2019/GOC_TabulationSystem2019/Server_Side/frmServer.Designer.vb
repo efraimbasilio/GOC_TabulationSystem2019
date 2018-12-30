@@ -110,7 +110,6 @@ Partial Class frmServer
         Me.cmbAllEvent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbAllEvent.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cmbAllEvent.FormattingEnabled = True
-        Me.cmbAllEvent.Items.AddRange(New Object() {"CASUAL INTERVIEW"})
         Me.cmbAllEvent.Location = New System.Drawing.Point(1217, 12)
         Me.cmbAllEvent.Name = "cmbAllEvent"
         Me.cmbAllEvent.Size = New System.Drawing.Size(121, 21)
@@ -126,6 +125,7 @@ Partial Class frmServer
         Me.Controls.Add(Me.lvAllEvents)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmServer"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmServer"
         Me.ResumeLayout(False)
         Me.PerformLayout()

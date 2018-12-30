@@ -1,2 +1,15 @@
 E:\GOC_TabulationSystem2019\GOC_TabulationSystem2019\bin\Debug\GOC_TabulationSystem2019.exe.config
 C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\bin\Debug\GOC_TabulationSystem2019.exe.config
+C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\bin\Debug\GOC_TabulationSystem2019.exe
+C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\bin\Debug\GOC_TabulationSystem2019.pdb
+C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\bin\Debug\GOC_TabulationSystem2019.xml
+C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\bin\Debug\MySql.Data.dll
+C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\obj\Debug\GOC_TabulationSystem2019.vbprojResolveAssemblyReference.cache
+C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\obj\Debug\GOC_TabulationSystem2019.frmAllEvents.resources
+C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\obj\Debug\GOC_TabulationSystem2019.frmLocked.resources
+C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\obj\Debug\GOC_TabulationSystem2019.Resources.resources
+C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\obj\Debug\GOC_TabulationSystem2019.frmServer.resources
+C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\obj\Debug\GOC_TabulationSystem2019.vbproj.GenerateResource.Cache
+C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\obj\Debug\GOC_TabulationSystem2019.exe
+C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\obj\Debug\GOC_TabulationSystem2019.xml
+C:\Users\Ef-PC\Documents\GitHub\GOC_TabulationSystem2019\GOC_TabulationSystem2019\GOC_TabulationSystem2019\obj\Debug\GOC_TabulationSystem2019.pdb

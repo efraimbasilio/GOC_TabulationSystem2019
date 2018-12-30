@@ -46,6 +46,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\Desktop\jecariaga-tabsystem-acquaintancesti2016-b73dd514d64f\jecariaga-tabsystem-acquaintancesti2016-b73dd514d64f\V 4.5\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -71,6 +74,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection.vb" />
     <Compile Include="frmAllEvents.Designer.vb">
       <DependentUpon>frmAllEvents.vb</DependentUpon>
     </Compile>
@@ -83,6 +87,7 @@
     <Compile Include="frmLocked.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Functions.vb" />
     <Compile Include="Server_Side\frmServer.Designer.vb">
       <DependentUpon>frmServer.vb</DependentUpon>
     </Compile>
