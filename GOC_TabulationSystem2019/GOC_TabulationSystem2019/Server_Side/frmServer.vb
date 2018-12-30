@@ -35,6 +35,7 @@
         End If
     End Sub
 
+    'TO SET THE EVENT THAT ALL EVENT CONTAINER FORM WILL CHECK
     Private Sub cmbEvent_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEvent.SelectedIndexChanged
         Try
             Dim sql As String
