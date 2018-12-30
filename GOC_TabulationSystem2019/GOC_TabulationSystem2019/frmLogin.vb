@@ -86,6 +86,32 @@
         Return 0
     End Function
 
+    Function PassJudgeto()
+        Try
+            Dim sql As String
+            sql = "SELECT * FROM tbl_load_number_of_judges WHERE loadJudges ='" + cboJudge.SelectedItem + "'"
+            dbConnect()
+            With cmd
+                .Connection = cn
+                .CommandText = sql
+                dr = .ExecuteReader
+            End With
+
+            frmServer.cmbEvent.Items.Clear()
+            If dr.HasRows Then
+                While dr.Read()
+                    frmAllEvents.lblJudgeNo.Text = dr("loadJudges")
+                End While
+            End If
+
+            dbClose()
+        Catch ex As Exception
+            MsgBox("Error" & ex.Message, vbCritical, "Message")
+        End Try
+        'Return 0
+        Return 0
+    End Function
+
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadJudges(Me)
@@ -94,7 +120,16 @@
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         CheckEvent()
         LoadTheEvent()
-
+        PassJudgeto()
         frmAllEvents.Show()
+    End Sub
+
+    Private Sub cboJudge_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboJudge.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub cboJudge_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboJudge.SelectedValueChanged
+
+
     End Sub
 End Class

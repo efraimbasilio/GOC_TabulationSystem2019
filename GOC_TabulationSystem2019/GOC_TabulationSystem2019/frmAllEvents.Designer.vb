@@ -62,7 +62,7 @@ Partial Class frmAllEvents
         Me.cmbScore2 = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.lblJno = New System.Windows.Forms.Label()
+        Me.lblJudgeNo = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cmbScore1 = New System.Windows.Forms.ComboBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -492,16 +492,16 @@ Partial Class frmAllEvents
         Me.PictureBox1.TabIndex = 349
         Me.PictureBox1.TabStop = False
         '
-        'lblJno
+        'lblJudgeNo
         '
-        Me.lblJno.AutoSize = True
-        Me.lblJno.BackColor = System.Drawing.Color.Transparent
-        Me.lblJno.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblJno.Location = New System.Drawing.Point(102, 9)
-        Me.lblJno.Name = "lblJno"
-        Me.lblJno.Size = New System.Drawing.Size(30, 23)
-        Me.lblJno.TabIndex = 348
-        Me.lblJno.Text = "J2"
+        Me.lblJudgeNo.AutoSize = True
+        Me.lblJudgeNo.BackColor = System.Drawing.Color.Transparent
+        Me.lblJudgeNo.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblJudgeNo.Location = New System.Drawing.Point(102, 9)
+        Me.lblJudgeNo.Name = "lblJudgeNo"
+        Me.lblJudgeNo.Size = New System.Drawing.Size(30, 23)
+        Me.lblJudgeNo.TabIndex = 348
+        Me.lblJudgeNo.Text = "J2"
         '
         'Label2
         '
@@ -569,7 +569,7 @@ Partial Class frmAllEvents
         Me.Controls.Add(Me.cmbScore2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.lblJno)
+        Me.Controls.Add(Me.lblJudgeNo)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.cmbScore1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -621,7 +621,7 @@ Partial Class frmAllEvents
     Friend WithEvents cmbScore2 As ComboBox
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents lblJno As Label
+    Friend WithEvents lblJudgeNo As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents cmbScore1 As ComboBox
 End Class
