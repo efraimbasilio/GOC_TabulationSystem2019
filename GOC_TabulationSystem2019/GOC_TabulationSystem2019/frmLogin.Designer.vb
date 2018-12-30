@@ -33,7 +33,7 @@ Partial Class frmLogin
         Me.cboJudge.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboJudge.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboJudge.FormattingEnabled = True
-        Me.cboJudge.Location = New System.Drawing.Point(42, 109)
+        Me.cboJudge.Location = New System.Drawing.Point(16, 24)
         Me.cboJudge.Name = "cboJudge"
         Me.cboJudge.Size = New System.Drawing.Size(118, 45)
         Me.cboJudge.TabIndex = 5
@@ -41,7 +41,7 @@ Partial Class frmLogin
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(166, 97)
+        Me.PictureBox1.Location = New System.Drawing.Point(140, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(76, 67)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -52,11 +52,14 @@ Partial Class frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.ClientSize = New System.Drawing.Size(1350, 729)
         Me.Controls.Add(Me.cboJudge)
         Me.Controls.Add(Me.PictureBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmLogin"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmLogin"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

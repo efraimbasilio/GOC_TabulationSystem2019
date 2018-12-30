@@ -1,7 +1,7 @@
 ﻿Public Class frmLogin
 
     'FOR DEFAULTS Scores
-    Public Sub DefaultScoreLoad(ByVal frm As Control)
+    Public Sub LoadJudges(ByVal frm As Control)
         Try
             Dim sql As String
             sql = "SELECT * FROM tbl_load_number_of_judges"
@@ -47,7 +47,6 @@
                 While dr.Read()
                     'EventChecker Global variable
                     EventChecker = dr("eventNumber")
-                    MessageBox.Show(EventChecker)
                 End While
             End If
 
@@ -74,6 +73,7 @@
             If dr.HasRows Then
                 While dr.Read()
                     frmAllEvents.lblEventName.Text = dr("eventName")
+                    'design for the Event Title
                     frmAllEvents.lblEventName.Font = New Font(FontFamily.GenericSansSerif, 24.0F, FontStyle.Bold)
                     frmAllEvents.lblEventName.Location = New Point(550, 10)
                 End While
@@ -88,7 +88,7 @@
 
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        LoadJudges(Me)
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click

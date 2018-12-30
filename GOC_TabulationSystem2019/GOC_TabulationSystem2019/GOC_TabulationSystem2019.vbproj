@@ -93,6 +93,12 @@
     <Compile Include="frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMainClient.Designer.vb">
+      <DependentUpon>frmMainClient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Functions.vb" />
     <Compile Include="FunctionUtilities.vb" />
     <Compile Include="Server_Side\frmServer.Designer.vb">
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainClient.resx">
+      <DependentUpon>frmMainClient.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
