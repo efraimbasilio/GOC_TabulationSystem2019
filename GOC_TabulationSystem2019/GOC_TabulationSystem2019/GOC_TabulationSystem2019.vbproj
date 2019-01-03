@@ -74,11 +74,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection.vb" />
-    <Compile Include="frmAllEvents.Designer.vb">
+    <Compile Include="Client\frmFinalEvent.Designer.vb">
+      <DependentUpon>frmFinalEvent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmFinalEvent.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connection\Connection.vb" />
+    <Compile Include="Client\frmAllEvents.Designer.vb">
       <DependentUpon>frmAllEvents.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAllEvents.vb">
+    <Compile Include="Client\frmAllEvents.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLocked.Designer.vb">
@@ -99,12 +105,12 @@
     <Compile Include="frmMainClient.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Functions.vb" />
-    <Compile Include="FunctionUtilities.vb" />
-    <Compile Include="Server_Side\frmServer.Designer.vb">
+    <Compile Include="Functions\Functions.vb" />
+    <Compile Include="Functions\FunctionUtilities.vb" />
+    <Compile Include="Server\frmServer.Designer.vb">
       <DependentUpon>frmServer.vb</DependentUpon>
     </Compile>
-    <Compile Include="Server_Side\frmServer.vb">
+    <Compile Include="Server\frmServer.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -124,8 +130,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmAllEvents.resx">
+    <EmbeddedResource Include="Client\frmAllEvents.resx">
       <DependentUpon>frmAllEvents.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmFinalEvent.resx">
+      <DependentUpon>frmFinalEvent.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLocked.resx">
       <DependentUpon>frmLocked.vb</DependentUpon>
@@ -142,7 +151,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Server_Side\frmServer.resx">
+    <EmbeddedResource Include="Server\frmServer.resx">
       <DependentUpon>frmServer.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -202,6 +211,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Report\CrystalReports\" />
+    <Folder Include="Report\ReportViewer\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

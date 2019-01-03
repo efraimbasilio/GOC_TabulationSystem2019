@@ -72,10 +72,18 @@
             'frmAllEventServer.cmbAllEvent.Items.Clear()
             If dr.HasRows Then
                 While dr.Read()
+                    'If dr("eventName") = 3 Then
+                    '    'frmFinalEvent.lblEventName.Font = New Font(FontFamily.GenericSansSerif, 24.0F, FontStyle.Bold)
+                    '    'frmFinalEvent.lblEventName.Location = New Point(550, 10)
+                    '    frmFinalEvent.ShowDialog()
+                    '    Exit Function
+                    'Else
                     frmAllEvents.lblEventName.Text = dr("eventName")
                     'design for the Event Title
-                    frmAllEvents.lblEventName.Font = New Font(FontFamily.GenericSansSerif, 24.0F, FontStyle.Bold)
+                    ' frmAllEvents.lblEventName.Font = New Font(FontFamily.GenericSansSerif, 24.0F, FontStyle.Bold)
                     frmAllEvents.lblEventName.Location = New Point(550, 10)
+
+                    ' End If
                 End While
             End If
 
@@ -139,8 +147,8 @@
                     For x = 1 To Judges
                         If dr("loadJudges") = String.Concat("J" & x & "") Then
 
-                            variableTable = String.Concat("tbl_max_min_" & x & "")
-                            variableField = x
+                            variableTable = String.Concat("tbl_max_min_1")
+                            variableField = 1
 
                             ' MessageBox.Show(variableTable + " " + variableField)
                             VariableTableScoreLoadCombo(frmAllEvents, variableTable, variableField)
@@ -156,6 +164,30 @@
         End Try
     End Sub
 
+    Public Sub PassJudgeToBI()
+        Try
+            Dim sql As String
+            sql = "SELECT * FROM tbl_load_number_of_judges WHERE loadJudges ='" + cboJudge.SelectedItem + "'"
+            dbConnect()
+            With cmd
+                .Connection = cn
+                .CommandText = sql
+                dr = .ExecuteReader
+            End With
+            'cboJudge.Items.Clear()
+            variableField = 0
+            'frmServer.cmbEvent.Items.Clear()
+            If dr.HasRows Then
+                While dr.Read()
+                    frmFinalEvent.lblJno.Text = dr("loadJudges")
+
+                End While
+            End If
+            dbClose()
+        Catch ex As Exception
+            MsgBox("Error" & ex.Message, vbCritical, "Message")
+        End Try
+    End Sub
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadJudges(Me)
@@ -163,11 +195,20 @@
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         CheckEvent()
-        LoadTheEvent()
-        PassJudgeto()
+        If EventChecker = 3 Then
+            PassJudgeToBI()
+            frmFinalEvent.ShowDialog()
+        Else
 
 
-        frmAllEvents.Show()
+            LoadTheEvent()
+            PassJudgeto()
+            frmAllEvents.Show()
+        End If
+
+
+
+
     End Sub
 
     Private Sub cboJudge_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboJudge.SelectedIndexChanged
